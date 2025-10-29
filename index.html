@@ -13,7 +13,7 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -31,7 +31,7 @@
     }
 
     .header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
       color: white;
       padding: 40px;
       text-align: center;
@@ -41,6 +41,14 @@
       font-size: 36px;
       margin-bottom: 10px;
       font-weight: 700;
+    }
+
+    .header h2 {
+      font-size: 48px;
+      margin: 15px 0;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .header p {
@@ -57,7 +65,7 @@
     }
 
     .section h2 {
-      color: #667eea;
+      color: #ff9800;
       font-size: 24px;
       margin-bottom: 15px;
       display: flex;
@@ -72,7 +80,7 @@
 
     .instructions {
       background: #f8f9fa;
-      border-left: 4px solid #667eea;
+      border-left: 4px solid #ff9800;
       padding: 20px;
       border-radius: 8px;
       margin-bottom: 20px;
@@ -124,19 +132,19 @@
       justify-content: center;
       padding: 30px 20px;
       background: white;
-      border: 3px solid #667eea;
+      border: 3px solid #ff9800;
       border-radius: 15px;
       text-decoration: none;
       color: #333;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
+      box-shadow: 0 4px 15px rgba(255, 152, 0, 0.1);
     }
 
     .btn:hover {
-      background: #667eea;
+      background: #ff9800;
       color: white;
       transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+      box-shadow: 0 8px 25px rgba(255, 152, 0, 0.3);
     }
 
     .btn-icon {
@@ -161,8 +169,8 @@
     }
 
     .rules-list {
-      background: #e7f3ff;
-      border-left: 4px solid #2196F3;
+      background: #fff3e0;
+      border-left: 4px solid #ff9800;
       padding: 20px;
       border-radius: 8px;
     }
@@ -178,7 +186,7 @@
     }
 
     .rules-list li strong {
-      color: #2196F3;
+      color: #ff9800;
     }
 
     @media (max-width: 768px) {
@@ -206,23 +214,25 @@
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <h1>🗳️ Simulador de Votación</h1>
-      <p>Elecciones UNLu 2025 - Claustro Estudiantes</p>
-    </div>
+      <div class="header">
+        <h1>🗳️ Simulador de Votación</h1>
+        <h2>LISTA 110</h2>
+        <p>Elecciones UNLu 2025 - Claustro Estudiantes</p>
+        <p style="font-size: 16px; margin-top: 10px; font-weight: bold;">Practicá tu voto con nosotros</p>
+      </div>
 
     <div class="content">
       <div class="section">
         <h2>¿Cómo votar?</h2>
-        <div class="instructions">
+    <div class="instructions">
           <ol>
             <li><strong>Elige una opción:</strong> Puedes votar una lista completa O votar candidatos individuales de diferentes listas.</li>
             <li><strong>Haz clic en los checkboxes:</strong> Marca con ✓ tus elecciones en la sección de LISTAS.</li>
             <li><strong>Vota las FÓRMULAS:</strong> Selecciona una fórmula para cada cargo (Rector, Directores).</li>
             <li><strong>Verifica tu voto:</strong> Revisa que todos tus votos estén correctamente marcados.</li>
           </ol>
-        </div>
       </div>
+    </div>
 
       <div class="section">
         <h2>Reglas importantes</h2>
@@ -239,22 +249,22 @@
       <div class="alert">
         <p><strong>Importante:</strong> Este es un simulador de práctica. Las selecciones realizadas aquí NO son vinculantes. Utiliza esta herramienta para familiarizarte con el sistema de votación.</p>
       </div>
-
+      
       <div class="section">
-        <h2>Elige una versión</h2>
+        <h2>Elegí una versión para practicar</h2>
         <div class="buttons">
           <a href="boleta-template.html" class="btn">
             <div class="btn-icon">📄</div>
-            <div class="btn-title">Boleta Plantilla</div>
-            <div class="btn-desc">Versión genérica con "APELLIDO, NOMBRE" para práctica</div>
+            <div class="btn-title">Boleta de Práctica</div>
+            <div class="btn-desc">Practicá con nuestra Lista 110 - Versión genérica</div>
           </a>
 
           <a href="boleta-completa.html" class="btn">
             <div class="btn-icon">📋</div>
-            <div class="btn-title">Boleta Completa</div>
-            <div class="btn-desc">Versión con nombres reales de candidatos</div>
+            <div class="btn-title">Simulador Completo</div>
+            <div class="btn-desc">Simulador con nombres de candidatos de la Lista 110</div>
           </a>
-        </div>
+      </div>
       </div>
     </div>
   </div>
