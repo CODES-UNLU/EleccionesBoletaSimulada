@@ -295,8 +295,8 @@
       <p class="last-update" id="lastUpdate"></p>
     </div>
 
-    <!-- Configuración -->
-    <div class="config-card" id="configCard">
+    <!-- Configuración (Oculta por defecto si hay URL preconfigurada) -->
+    <div class="config-card hidden" id="configCard">
       <h2>⚙️ Configuración Inicial</h2>
       <p style="color: #666; margin-bottom: 15px;">
         Pega aquí la URL de tu Google Apps Script (Web App)
@@ -476,8 +476,11 @@
     // CONFIGURACIÓN Y ESTADO
     // ═══════════════════════════════════════════════════════════════
 
+    // ⚠️ CONFIGURACIÓN: Pega aquí la URL de tu Google Apps Script
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwO9-KmhNnUtzAWyHUiaRUogni7DVcmu4EybQxjQtwnHXikbSVSZwP4B8llDRFQ86O0BA/exec'; // Reemplazar con: https://script.google.com/macros/s/.../exec
+    
     let config = {
-      scriptUrl: localStorage.getItem('scriptUrl') || ''
+      scriptUrl: SCRIPT_URL || localStorage.getItem('scriptUrl') || ''
     };
 
     let charts = {};
@@ -1204,12 +1207,22 @@
     window.onload = function() {
       cargarConfiguracion();
       
-      // Si ya hay URL configurada, cargar datos automáticamente
-      if (config.scriptUrl) {
+      // Verificar si hay URL preconfigurada
+      const urlConfigurada = SCRIPT_URL && SCRIPT_URL !== 'TU_URL_AQUI' && SCRIPT_URL.startsWith('http');
+      
+      if (urlConfigurada) {
+        // Ocultar formulario de configuración y cargar datos automáticamente
+        document.getElementById('configCard').classList.add('hidden');
         cargarDatos();
+      } else if (config.scriptUrl) {
+        // Si hay URL en localStorage, cargar datos
+        cargarDatos();
+      } else {
+        // Mostrar formulario de configuración
+        document.getElementById('configCard').classList.remove('hidden');
       }
 
-      // Auto-refresh cada 30 segundos
+      // Auto-refresh cada 30 segundos si hay datos
       setInterval(() => {
         if (config.scriptUrl && !document.getElementById('statsSection').classList.contains('hidden')) {
           cargarDatos();
