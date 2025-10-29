@@ -1,0 +1,1140 @@
+{
+  "elecciones": {
+    "año": 2025,
+    "tipo": "ESTUDIANTES",
+    "sedes": {
+      "lujan": {
+        "nombre": "LUJÁN",
+        "listas": {
+          "110": {
+            "numero": "110",
+            "asamblea_universitaria": {
+              "titulares": [
+                "PANESSI LUCILA",
+                "PEREZ EMILIANO F.",
+                "PIERDOMENICO VANESA S.",
+                "LOBO MARCOS J.",
+                "KAMM BRENDA N.",
+                "ROCHA JAVIER A."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "FREITA FRANCO E.",
+                "IGLESIAS VALERIA M.",
+                "RESSIA J. JESUS",
+                "ARINA ELOISA F.",
+                "CARPANCHAY FRANCO M."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "VACCARO GIANFRANCO",
+                "LASALA MICAELA",
+                "CORONEL BAREIRO ALFREDO"
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "LENCINA THIAGO S.",
+                "VEGA MICAELA E.",
+                "EMANUELE JAN E."
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "CASSE CLAUDIA M.",
+                "DOMINGUEZ PROVENZANO M.",
+                "PERTICARARI YESICAL."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "CIRULLI FATIMA D.",
+                "CRUZ MAXIMO N.",
+                "PORTUGUEZ CAIPE ELIZABETH D."
+              ]
+            }
+          },
+          "117": {
+            "numero": "117",
+            "asamblea_universitaria": {
+              "titulares": [
+                "LUCERO LORENA P.",
+                "MANTIÑAN CRISTIAN U.",
+                "RODRIGUEZ JULIETA B.",
+                "YAHARI CORVALAN MATIAS I.",
+                "BARBOSA ROMINA E.",
+                "ANDRADA ELIO J."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "NUÑEZ KAREN G.",
+                "ALVAREZ MARTIN",
+                "PIANALTO AZUL D.",
+                "MONTERO SATLER IVAN L.",
+                "PANIAGUA SOFIA M."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "CABRERA MARTIN O.",
+                "MIRANDA MILAGROS A.",
+                "YAHARI CORVALAN MATIAS I."
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "RIVERO FACUNDO D.",
+                "COLOMBO MONTERO NAZARENA",
+                "LEIVA ALEJANDRO A."
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "PIANALTO AZUL D.",
+                "DA SILVA GERONIMO T.",
+                "BARON MALENA C."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "MONTERO HUGO R.",
+                "GALLI GEORGINA",
+                "CASSANO MARTIN F."
+              ]
+            }
+          },
+          "101": {
+            "numero": "101",
+            "asamblea_universitaria": {
+              "titulares": [
+                "DI MATTEO BRAMBILLA M.",
+                "CHAVARRIA LUZ M.",
+                "GONZALEZ DA SILVA TOMAS",
+                "SUQUELE MARIA B.",
+                "SIDDERS FACUNDO",
+                "RIQUELME LUDMILA M."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "RIVERO GIANELLA",
+                "RAJAL RAMIRO",
+                "MARTELETTI MAZU LUCIA",
+                "HAYDEN ANIGSTEIN ANTONIO",
+                "LITARDO MARIA A."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "LEZCANO MICAELA C.",
+                "HAYDEN ANIGSTEIN ANTONIO",
+                "ROUDE FLORENCIA A."
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "KLUG JUAN S.",
+                "IESI LUDMILA",
+                "BELLIDO LAUTARO"
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "MARTINO MARIA E.",
+                "DE LA PEÑA SABRINA E.",
+                "AVILA MENDEZ CINTHIAL."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "SBERNA LUCIO",
+                "GONZALEZ DA SILVA TOMAS",
+                "BIGATA JUAN M."
+              ]
+            }
+          },
+          "111": {
+            "numero": "111",
+            "asamblea_universitaria": {
+              "titulares": [
+                "FOIS CATTERINA S.",
+                "ALONSO JOAQUIN",
+                "GALVAN ABRIL L.",
+                "GOMEZ HECTOR A.",
+                "BIANCO SATRAGNI FIORELLA",
+                "BENITES MONJE FACUNDOT."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "PALACIN AGOSTINA",
+                "BARRERA JORGE F.",
+                "RUSSO SOFIA R.",
+                "YAQUINI OLIVER M.",
+                "AURELIO RUT A."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "ORUE ROSSO MILENA",
+                "LECCE NICOLAS A.",
+                "VELAZQUEZ FLORENCIA M."
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "BELIERA MELINA M.",
+                "MELEGARI VALENTINA",
+                "BENITES MONJE FACUNDOT."
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "AURELIO RUT A.",
+                "MONZON BRIAN N.",
+                "BURGOS MONICA E."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "YAQUINI OLIVER M.",
+                "BUGLIOLO NAHUEL A."
+              ]
+            }
+          }
+        }
+      },
+      "chivilcoy": {
+        "nombre": "Centro Regional CHIVILCOY",
+        "listas": {
+          "110": {
+            "numero": "110",
+            "asamblea_universitaria": {
+              "titulares": [
+                "PANESSI LUCILA",
+                "PEREZ EMILIANO F.",
+                "PIERDOMENICO VANESA S.",
+                "LOBO MARCOS J.",
+                "KAMM BRENDA N.",
+                "ROCHA JAVIER A."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "FREITA FRANCO E.",
+                "IGLESIAS VALERIA M.",
+                "RESSIA J. JESUS",
+                "ARINA ELOISA F.",
+                "CARPANCHAY FRANCO M."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "VACCARO GIANFRANCO",
+                "LASALA MICAELA",
+                "CORONEL BAREIRO ALFREDO"
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "LENCINA THIAGO S.",
+                "VEGA MICAELA E.",
+                "EMANUELE IAN E."
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "CASSE CLAUDIA M.",
+                "DOMINGUEZ PROVENZANO M.",
+                "PERTICARARI YESICA L."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "CIRULLI FATIMA D.",
+                "CRUZ MAXIMO N.",
+                "PORTUGUEZ CAIPE ELIZABETH D."
+              ]
+            },
+            "consejo_asesor": {
+              "titulares": [
+                "RESSIA J. JESUS",
+                "ALVAREZ P. AMELINA",
+                "RIZZO FEDERICO S.",
+                "SORIANO ANA C."
+              ]
+            }
+          },
+          "117": {
+            "numero": "117",
+            "asamblea_universitaria": {
+              "titulares": [
+                "LUCERO LORENA P.",
+                "MANTIÑAN CRISTIAN U.",
+                "RODRIGUEZ JULIETA B.",
+                "YAHARI CORVALAN MATIAS I.",
+                "BARBOSA ROMINA E.",
+                "ANDRADA ELIO J."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "NUÑEZ KAREN G.",
+                "ALVAREZ MARTIN",
+                "PIANALTO AZUL D.",
+                "MONTERO SATLER IVAN L.",
+                "PANIAGUA SOFIA M."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "CABRERA MARTIN O.",
+                "MIRANDA MILAGROS A.",
+                "YAHARI CORVALAN MATIAS I."
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "RIVERO FACUNDO D.",
+                "COLOMBO MONTERO NAZARENA",
+                "LEIVA ALEJANDRO A."
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "PIANALTO AZUL D.",
+                "DA SILVA GERONIMO T.",
+                "BARON MALENA C."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "MONTERO HUGO R.",
+                "GALLI GEORGINA",
+                "CASSANO MARTIN F."
+              ]
+            },
+            "consejo_asesor": {
+              "titulares": []
+            }
+          },
+          "101": {
+            "numero": "101",
+            "asamblea_universitaria": {
+              "titulares": [
+                "DI MATTEO BRAMBILLA M.",
+                "CHAVARRIA LUZ M.",
+                "GONZALEZ DA SILVA TOMAS",
+                "SUQUELE MARIA B.",
+                "SIDDERS FACUNDO",
+                "RIQUELME LUDMILA M."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "RIVERO GIANELLA",
+                "RAJAL RAMIRO",
+                "MARTELETTI MAZU LUCIA",
+                "HAYDEN ANIGSTEIN ANTONIO",
+                "LITARDO MARIA A."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "LEZCANO MICAELA C.",
+                "HAYDEN ANIGSTEIN ANTONIO",
+                "ROUDE FLORENCIA A."
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "KLUG JUAN S.",
+                "IESI LUDMILA",
+                "BELLIDO LAUTARO"
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "MARTINO MARIA E.",
+                "DE LA PEÑA SABRINA E.",
+                "AVILA MENDEZ CINTHIAL."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "SBERNA LUCIO",
+                "GONZALEZ DA SILVA TOMAS",
+                "BIGATA JUAN M."
+              ]
+            },
+            "consejo_asesor": {
+              "titulares": []
+            }
+          },
+          "111": {
+            "numero": "111",
+            "asamblea_universitaria": {
+              "titulares": [
+                "FOIS CATTERINA S.",
+                "ALONSO JOAQUIN",
+                "GALVAN ABRIL L.",
+                "GOMEZ HECTOR A.",
+                "BIANCO SATRAGNI FIORELLA",
+                "BENITES MONJE FACUNDO T."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "PALACIN AGOSTINA",
+                "BARRERA JORGE F.",
+                "AVILA MENDEZ CINTHIA L.",
+                "YAQUINI OLIVER M.",
+                "AURELIO RUT A."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "ORUE ROSSO MILENA",
+                "LECCE NICOLAS A.",
+                "RUSSO SOFIA R."
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "BELIERA MELINA M.",
+                "MELEGARI VALENTINA",
+                "BENITES MONJE FACUNDOT."
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "AURELIO RUT A.",
+                "MONZON BRIAN N.",
+                "BURGOS MONICA E."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "YAQUINI OLIVER M.",
+                "BUGLIOLO NAHUEL A."
+              ]
+            },
+            "consejo_asesor": {
+              "titulares": []
+            }
+          }
+        }
+      },
+      "san_miguel": {
+        "nombre": "Centro Regional SAN MIGUEL",
+        "listas": {
+          "110": {
+            "numero": "110",
+            "asamblea_universitaria": {
+              "titulares": [
+                "PANESSI LUCILA",
+                "PEREZ EMILIANO F.",
+                "PIERDOMENICO VANESA S.",
+                "LOBO MARCOS J.",
+                "KAMM BRENDA N.",
+                "ROCHA JAVIER A."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "FREITA FRANCO E.",
+                "IGLESIAS VALERIA M.",
+                "RESSIA J. JESUS",
+                "ARINA ELOISA F.",
+                "CARPANCHAY FRANCO M."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "VACCARO GIANFRANCO",
+                "LASALA MICAELA",
+                "CORONEL BAREIRO ALFREDO"
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "LENCINA THIAGO S.",
+                "VEGA MICAELA E.",
+                "EMANUELE JAN E."
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "CASSE CLAUDIA M.",
+                "DOMINGUEZ PROVENZANO M.",
+                "PERTICARARI YESICA L."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "CIRULLI FATIMA D.",
+                "CRUZ MAXIMO N.",
+                "PORTUGUEZ CAIPE ELIZABETH D."
+              ]
+            },
+            "consejo_asesor": {
+              "titulares": [
+                "BASALDUA SARA B.",
+                "PEREZ EMILIANO F.",
+                "SANCHEZ VIRGINIA A.",
+                "CASTRO CRISTIAN L."
+              ]
+            }
+          },
+          "117": {
+            "numero": "117",
+            "asamblea_universitaria": {
+              "titulares": [
+                "LUCERO LORENA P.",
+                "MANTIÑAN CRISTIAN U.",
+                "RODRIGUEZ JULIETA B.",
+                "YAHARI CORVALAN MATIAS I.",
+                "BARBOSA ROMINA E.",
+                "ANDRADA ELIO J."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "NUÑEZ KAREN G.",
+                "ALVAREZ MARTIN",
+                "PIANALTO AZUL D.",
+                "MONTERO SATLER IVAN L.",
+                "PANIAGUA SOFIA M."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "CABRERA MARTIN O.",
+                "MIRANDA MILAGROS A.",
+                "YAHARI CORVALAN MATIAS I."
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "RIVERO FACUNDO D.",
+                "COLOMBO MONTERO NAZARENA",
+                "LEIVA ALEJANDRO A."
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "PIANALTO AZUL D.",
+                "DA SILVA GERONIMO T.",
+                "BARON MALENA C."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "MONTERO HUGO R.",
+                "GALLI GEORGINA",
+                "CASSANO MARTIN F."
+              ]
+            },
+            "consejo_asesor": {
+              "titulares": []
+            }
+          },
+          "101": {
+            "numero": "101",
+            "asamblea_universitaria": {
+              "titulares": [
+                "DI MATTEO BRAMBILLA M.",
+                "CHAVARRIA LUZ M.",
+                "GONZALEZ DA SILVA TOMAS",
+                "SUQUELE MARIA B.",
+                "SIDDERS FACUNDO",
+                "RIQUELME LUDMILA M."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "RIVERO GIANELLA",
+                "RAJAL RAMIRO",
+                "MARTELETTI MAZU LUCIA",
+                "HAYDEN ANIGSTEIN ANTONIO",
+                "LITARDO MARIA A."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "LEZCANO MICAELA C.",
+                "HAYDEN ANIGSTEIN ANTONIO",
+                "ROUDE FLORENCIA A."
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "KLUG JUAN S.",
+                "IESI LUDMILA",
+                "BELLIDO LAUTARO"
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "MARTINO MARIA E.",
+                "DE LA PEÑA SABRINA E.",
+                "AVILA MENDEZ CINTHIAL."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "SBERNA LUCIO",
+                "GONZALEZ DA SILVA TOMAS",
+                "BIGATA JUAN M."
+              ]
+            },
+            "consejo_asesor": {
+              "titulares": []
+            }
+          },
+          "111": {
+            "numero": "111",
+            "asamblea_universitaria": {
+              "titulares": [
+                "FOIS CATTERINA S.",
+                "ALONSO JOAQUIN",
+                "GALVAN ABRIL L.",
+                "GOMEZ HECTOR A.",
+                "BIANCO SATRAGNI FIORELLA",
+                "BENITES MONJE FACUNDO T."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "PALACIN AGOSTINA",
+                "BARRERA JORGE F.",
+                "AVILA MENDEZ CINTHIA L.",
+                "YAQUINI OLIVER M.",
+                "AURELIO RUT A."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "ORUE ROSSO MILENA",
+                "LECCE NICOLAS A.",
+                "RUSSO SOFIA R."
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "BELIERA MELINA M.",
+                "MELEGARI VALENTINA",
+                "BENITES MONJE FACUNDOT."
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "AURELIO RUT A.",
+                "MONZON BRIAN N.",
+                "BURGOS MONICA E."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "YAQUINI OLIVER M.",
+                "BUGLIOLO NAHUEL A."
+              ]
+            },
+            "consejo_asesor": {
+              "titulares": []
+            }
+          }
+        }
+      },
+      "campana": {
+        "nombre": "Centro Regional CAMPANA",
+        "listas": {
+          "110": {
+            "numero": "110",
+            "asamblea_universitaria": {
+              "titulares": [
+                "PANESSI LUCILA",
+                "PEREZ EMILIANO F.",
+                "PIERDOMENICO VANESA S.",
+                "LOBO MARCOS J.",
+                "KAMM BRENDA N.",
+                "ROCHA JAVIER A."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "FREITA FRANCO E.",
+                "IGLESIAS VALERIA M.",
+                "RESSIA J. JESUS",
+                "ARINA ELOISA F.",
+                "CARPANCHAY FRANCO M."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "VACCARO GIANFRANCO",
+                "LASALA MICAELA",
+                "CORONEL BAREIRO ALFREDO"
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "LENCINA THIAGO S.",
+                "VEGA MICAELA E.",
+                "EMANUELE JAN E."
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "CASSE CLAUDIA M.",
+                "DOMINGUEZ PROVENZANO M.",
+                "PERTICARARI YESICA L."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "CIRULLI FATIMA D.",
+                "CRUZ MAXIMO N.",
+                "PORTUGUEZ CAIPE ELIZABETH D."
+              ]
+            },
+            "consejo_asesor": {
+              "titulares": [
+                "PERTICARARI YESICA L.",
+                "ANTONIADIS J. NICOLAS",
+                "IBARRA ALEJANDRA N.",
+                "TORRES FRANCISCO A."
+              ]
+            }
+          },
+          "117": {
+            "numero": "117",
+            "asamblea_universitaria": {
+              "titulares": [
+                "LUCERO LORENA P.",
+                "MANTIÑAN CRISTIAN U.",
+                "RODRIGUEZ JULIETA B.",
+                "YAHARI CORVALAN MATIAS I.",
+                "BARBOSA ROMINA E.",
+                "ANDRADA ELIO J."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "NUÑEZ KAREN G.",
+                "ALVAREZ MARTIN",
+                "PIANALTO AZUL D.",
+                "MONTERO SATLER IVAN L.",
+                "PANIAGUA SOFIA M."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "CABRERA MARTIN O.",
+                "MIRANDA MILAGROS A.",
+                "YAHARI CORVALAN MATIAS I."
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "RIVERO FACUNDO D.",
+                "COLOMBO MONTERO NAZARENA",
+                "LEIVA ALEJANDRO A."
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "PIANALTO AZUL D.",
+                "DA SILVA GERONIMO T.",
+                "BARON MALENA C."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "MONTERO HUGO R.",
+                "GALLI GEORGINA",
+                "CASSANO MARTIN F."
+              ]
+            },
+            "consejo_asesor": {
+              "titulares": []
+            }
+          },
+          "101": {
+            "numero": "101",
+            "asamblea_universitaria": {
+              "titulares": [
+                "DI MATTEO BRAMBILLA M.",
+                "CHAVARRIA LUZ M.",
+                "GONZALEZ DA SILVA TOMAS",
+                "SUQUELE MARIA B.",
+                "SIDDERS FACUNDO",
+                "RIQUELME LUDMILA M."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "RIVERO GIANELLA",
+                "RAJAL RAMIRO",
+                "MARTELETTI MAZU LUCIA",
+                "HAYDEN ANIGSTEIN ANTONIO",
+                "LITARDO MARIA A."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "LEZCANO MICAELA C.",
+                "HAYDEN ANIGSTEIN ANTONIO",
+                "ROUDE FLORENCIA A."
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "KLUG JUAN S.",
+                "IESI LUDMILA",
+                "BELLIDO LAUTARO"
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "MARTINO MARIA E.",
+                "DE LA PEÑA SABRINA E.",
+                "AVILA MENDEZ CINTHIAL."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "SBERNA LUCIO",
+                "GONZALEZ DA SILVA TOMAS",
+                "BIGATA JUAN M."
+              ]
+            },
+            "consejo_asesor": {
+              "titulares": []
+            }
+          },
+          "111": {
+            "numero": "111",
+            "asamblea_universitaria": {
+              "titulares": [
+                "FOIS CATTERINA S.",
+                "ALONSO JOAQUIN",
+                "GALVAN ABRIL L.",
+                "GOMEZ HECTOR A.",
+                "BIANCO SATRAGNI FIORELLA",
+                "BENITES MONJE FACUNDO T."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "PALACIN AGOSTINA",
+                "BARRERA JORGE F.",
+                "AVILA MENDEZ CINTHIA L.",
+                "YAQUINI OLIVER M.",
+                "AURELIO RUT A."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "ORUE ROSSO MILENA",
+                "LECCE NICOLAS A.",
+                "RUSSO SOFIA R."
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "BELIERA MELINA M.",
+                "MELEGARI VALENTINA",
+                "BENITES MONJE FACUNDOT."
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "AURELIO RUT A.",
+                "MONZON BRIAN N.",
+                "BURGOS MONICA E."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "YAQUINI OLIVER M.",
+                "BUGLIOLO NAHUEL A."
+              ]
+            },
+            "consejo_asesor": {
+              "titulares": []
+            }
+          }
+        }
+      },
+      "san_fernando": {
+        "nombre": "Delegación SAN FERNANDO",
+        "listas": {
+          "110": {
+            "numero": "110",
+            "asamblea_universitaria": {
+              "titulares": [
+                "PANESSI LUCILA",
+                "PEREZ EMILIANO F.",
+                "PIERDOMENICO VANESA S.",
+                "LOBO MARCOS J.",
+                "KAMM BRENDA N.",
+                "ROCHA JAVIER A."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "FREITA FRANCO E.",
+                "IGLESIAS VALERIA M.",
+                "RESSIA J. JESUS",
+                "ARINA ELOISA F.",
+                "CARPANCHAY FRANCO M."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "VACCARO GIANFRANCO",
+                "LASALA MICAELA",
+                "CORONEL BAREIRO ALFREDO"
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "LENCINA THIAGO S.",
+                "VEGA MICAELA E.",
+                "EMANUELE JAN E."
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "CASSE CLAUDIA M.",
+                "DOMINGUEZ PROVENZANO M.",
+                "PERTICARARI YESICA L."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "CIRULLI FATIMA D.",
+                "CRUZ MAXIMO N.",
+                "PORTUGUEZ CAIPE ELIZABETH D."
+              ]
+            },
+            "consejo_asesor": {
+              "titulares": []
+            }
+          },
+          "117": {
+            "numero": "117",
+            "asamblea_universitaria": {
+              "titulares": [
+                "LUCERO LORENA P.",
+                "MANTIÑAN CRISTIAN U.",
+                "RODRIGUEZ JULIETA B.",
+                "YAHARI CORVALAN MATIAS I.",
+                "BARBOSA ROMINA E.",
+                "ANDRADA ELIO J."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "NUÑEZ KAREN G.",
+                "ALVAREZ MARTIN",
+                "PIANALTO AZUL D.",
+                "MONTERO SATLER IVAN L.",
+                "PANIAGUA SOFIA M."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "CABRERA MARTIN O.",
+                "MIRANDA MILAGROS A.",
+                "YAHARI CORVALAN MATIAS I."
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "RIVERO FACUNDO D.",
+                "COLOMBO MONTERO NAZARENA",
+                "LEIVA ALEJANDRO A."
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "PIANALTO AZUL D.",
+                "DA SILVA GERONIMO T.",
+                "BARON MALENA C."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "MONTERO HUGO R.",
+                "GALLI GEORGINA",
+                "CASSANO MARTIN F."
+              ]
+            },
+            "consejo_asesor": {
+              "titulares": []
+            }
+          },
+          "101": {
+            "numero": "101",
+            "asamblea_universitaria": {
+              "titulares": [
+                "DI MATTEO BRAMBILLA M.",
+                "CHAVARRIA LUZ M.",
+                "GONZALEZ DA SILVA TOMAS",
+                "SUQUELE MARIA B.",
+                "SIDDERS FACUNDO",
+                "RIQUELME LUDMILA M."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "RIVERO GIANELLA",
+                "RAJAL RAMIRO",
+                "MARTELETTI MAZU LUCIA",
+                "HAYDEN ANIGSTEIN ANTONIO",
+                "LITARDO MARIA A."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "LEZCANO MICAELA C.",
+                "HAYDEN ANIGSTEIN ANTONIO",
+                "ROUDE FLORENCIA A."
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "KLUG JUAN S.",
+                "IESI LUDMILA",
+                "BELLIDO LAUTARO"
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "MARTINO MARIA E.",
+                "DE LA PEÑA SABRINA E.",
+                "AVILA MENDEZ CINTHIAL."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "SBERNA LUCIO",
+                "GONZALEZ DA SILVA TOMAS",
+                "BIGATA JUAN M."
+              ]
+            },
+            "consejo_asesor": {
+              "titulares": []
+            }
+          },
+          "111": {
+            "numero": "111",
+            "asamblea_universitaria": {
+              "titulares": [
+                "FOIS CATTERINA S.",
+                "ALONSO JOAQUIN",
+                "GALVAN ABRIL L.",
+                "GOMEZ HECTOR A.",
+                "BIANCO SATRAGNI FIORELLA",
+                "BENITES MONJE FACUNDO T."
+              ]
+            },
+            "consejo_superior": {
+              "titulares": [
+                "PALACIN AGOSTINA",
+                "BARRERA JORGE F.",
+                "AVILA MENDEZ CINTHIA L.",
+                "YAQUINI OLIVER M.",
+                "AURELIO RUT A."
+              ]
+            },
+            "cdd_cs_basicas": {
+              "titulares": [
+                "ORUE ROSSO MILENA",
+                "LECCE NICOLAS A.",
+                "RUSSO SOFIA R."
+              ]
+            },
+            "cdd_cs_sociales": {
+              "titulares": [
+                "BELIERA MELINA M.",
+                "BUGLIOLO NAHUEL A."
+              ]
+            },
+            "cdd_educacion": {
+              "titulares": [
+                "AURELIO RUT A.",
+                "MONZON BRIAN N.",
+                "BURGOS MONICA E."
+              ]
+            },
+            "cdd_tecnologia": {
+              "titulares": [
+                "YAQUINI OLIVER M.",
+                "BUGLIOLO NAHUEL A."
+              ]
+            },
+            "consejo_asesor": {
+              "titulares": [
+                "PALACIN AGOSTINA",
+                "BARRERA JORGE F.",
+                "HIEBRA SOL A.",
+                "YAQUINI OLIVER M."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "formulas": {
+      "rector_vicerrector": [
+        {
+          "tipo": "Lista 7",
+          "rectora": "CRAIG ELENA B.",
+          "vicerrector": "GIORGI ADONIS D."
+        },
+        {
+          "tipo": "Candidatos/as",
+          "rector": "PANESSI WALTER F.",
+          "vicerrector": "NUÑEZ MIGUEL A."
+        }
+      ],
+      "ciencias_basicas": [
+        {
+          "tipo": "Lista 7",
+          "director_decano": "DE MARZI MAURICIO C.",
+          "vicedirectora_decana": "TORREMORELL ANA M."
+        },
+        {
+          "tipo": "Candidatos/as",
+          "director_decano": "DI SALVO C. JAVIER",
+          "vicedirector_decano": "REAL ARIEL H."
+        }
+      ],
+      "ciencias_sociales": [
+        {
+          "director_decano": "LARRETAPE GABRIEL A.",
+          "vicedirectora_decana": "CARLIS MARIA F."
+        }
+      ],
+      "educacion": [
+        {
+          "director_decano": "DI MATTEO ALVARO J.",
+          "vicedirectora_decana": "GONZALEZ MARIA A."
+        }
+      ],
+      "tecnologia": [
+        {
+          "directora_decana": "SANTADINO MARINA V.",
+          "vicedirector_decano": "MARCHINI MARIANO D."
+        }
+      ]
+    }
+  }
+}
+
