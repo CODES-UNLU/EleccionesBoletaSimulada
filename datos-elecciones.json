@@ -1094,44 +1094,58 @@
     "formulas": {
       "rector_vicerrector": [
         {
-          "tipo": "Lista 7",
+          "letra": "A",
+          "nombre": "CRAIG / GIORGI",
           "rectora": "CRAIG ELENA B.",
-          "vicerrector": "GIORGI ADONIS D."
+          "vicerrector": "GIORGI ADONIS D.",
+          "instancia": "Candidatos/as"
         },
         {
-          "tipo": "Candidatos/as",
+          "letra": "B",
+          "nombre": "PANESSI / NUÑEZ",
           "rector": "PANESSI WALTER F.",
-          "vicerrector": "NUÑEZ MIGUEL A."
+          "vicerrector": "NUÑEZ MIGUEL A.",
+          "instancia": "Candidatos/as"
         }
       ],
       "ciencias_basicas": [
         {
-          "tipo": "Lista 7",
+          "letra": "A",
+          "nombre": "DE MARZI / TORREMORELL",
           "director_decano": "DE MARZI MAURICIO C.",
-          "vicedirectora_decana": "TORREMORELL ANA M."
+          "vicedirectora_decana": "TORREMORELL ANA M.",
+          "instancia": "Candidatos/as"
         },
         {
-          "tipo": "Candidatos/as",
+          "letra": "B",
+          "nombre": "DI SALVO / REAL",
           "director_decano": "DI SALVO C. JAVIER",
-          "vicedirector_decano": "REAL ARIEL H."
+          "vicedirector_decano": "REAL ARIEL H.",
+          "instancia": "Candidatos/as"
         }
       ],
       "ciencias_sociales": [
         {
+          "nombre": "LARRETAPE / CARLIS",
           "director_decano": "LARRETAPE GABRIEL A.",
-          "vicedirectora_decana": "CARLIS MARIA F."
+          "vicedirectora_decana": "CARLIS MARIA F.",
+          "instancia": "Candidatos/as"
         }
       ],
       "educacion": [
         {
+          "nombre": "DI MATTEO / GONZALEZ",
           "director_decano": "DI MATTEO ALVARO J.",
-          "vicedirectora_decana": "GONZALEZ MARIA A."
+          "vicedirectora_decana": "GONZALEZ MARIA A.",
+          "instancia": "Candidatos/as"
         }
       ],
       "tecnologia": [
         {
+          "nombre": "SANTADINO / MARCHINI",
           "directora_decana": "SANTADINO MARINA V.",
-          "vicedirector_decano": "MARCHINI MARIANO D."
+          "vicedirector_decano": "MARCHINI MARIANO D.",
+          "instancia": "Candidatos/as"
         }
       ]
     }
