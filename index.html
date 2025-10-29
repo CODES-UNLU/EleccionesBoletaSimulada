@@ -945,6 +945,26 @@
             cb.textContent = "";
           });
         } else {
+          // Verificar si ya hay otra lista completa seleccionada
+          const otraListaCompleta = Object.entries(selecciones.listas).find(
+            ([key, value]) => key !== lista && value === "COMPLETA"
+          );
+
+          if (otraListaCompleta) {
+            alert(`Ya tiene seleccionada la lista ${otraListaCompleta[0]} completa. Solo puede votar una lista completa. Primero deseleccione la otra lista.`);
+            return;
+          }
+
+          // Verificar si hay votos individuales en otras listas
+          const hayVotosIndividuales = Object.entries(selecciones.listas).some(
+            ([key, value]) => key !== lista && Array.isArray(value) && value.length > 0
+          );
+
+          if (hayVotosIndividuales) {
+            alert("Ya tiene votos individuales en otras listas. No puede votar lista completa si ya votó candidatos individuales.");
+            return;
+          }
+
           // Seleccionar
           checkbox.classList.add("selected");
           checkbox.textContent = "✓";
@@ -971,6 +991,7 @@
         }
 
         if (isSelected) {
+          // Deseleccionar
           checkbox.classList.remove("selected");
           checkbox.textContent = "";
 
@@ -984,7 +1005,28 @@
           if (selecciones.listas[lista].length === 0) {
             delete selecciones.listas[lista];
           }
-          } else {
+        } else {
+          // Verificar si ya hay una lista completa seleccionada
+          const listaCompletaSeleccionada = Object.entries(selecciones.listas).find(
+            ([key, value]) => value === "COMPLETA"
+          );
+
+          if (listaCompletaSeleccionada) {
+            alert(`Ya tiene seleccionada la lista ${listaCompletaSeleccionada[0]} completa. No puede votar candidatos individuales.`);
+            return;
+          }
+
+          // Verificar si este cargo ya fue votado en otra lista
+          const cargoYaVotado = Object.entries(selecciones.listas).find(
+            ([key, value]) => key !== lista && Array.isArray(value) && value.includes(cargo)
+          );
+
+          if (cargoYaVotado) {
+            alert(`Ya votó este cargo en la lista ${cargoYaVotado[0]}. No puede votar el mismo cargo en dos listas diferentes.`);
+            return;
+          }
+
+          // Seleccionar
           checkbox.classList.add("selected");
           checkbox.textContent = "✓";
 
@@ -1001,10 +1043,23 @@
         const isSelected = checkbox.classList.contains("selected");
 
         if (isSelected) {
+          // Deseleccionar
           checkbox.classList.remove("selected");
           checkbox.textContent = "";
           delete selecciones.formulas[formula];
-          } else {
+        } else {
+          // Verificar si ya hay una fórmula del mismo tipo seleccionada
+          const tipoFormula = formula.replace(/\d+$/, ''); // Quitar números al final (ej: "rector" de "rector2")
+          const formulaDelMismoTipo = Object.keys(selecciones.formulas).find(
+            (key) => key !== formula && key.startsWith(tipoFormula)
+          );
+
+          if (formulaDelMismoTipo) {
+            alert(`Ya tiene seleccionada otra fórmula para este cargo. Solo puede votar una fórmula por cargo.`);
+            return;
+          }
+
+          // Seleccionar
           checkbox.classList.add("selected");
           checkbox.textContent = "✓";
           selecciones.formulas[formula] = true;
