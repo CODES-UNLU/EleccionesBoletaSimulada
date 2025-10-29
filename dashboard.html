@@ -540,17 +540,11 @@
       try {
         console.log('📊 Cargando datos desde:', config.scriptUrl);
 
-        // Agregar parámetros para evitar caché y mejorar la conexión
+        // Agregar parámetros para evitar caché
         const urlConTimestamp = config.scriptUrl + (config.scriptUrl.includes('?') ? '&' : '?') + 't=' + Date.now();
         
-        const response = await fetch(urlConTimestamp, {
-          method: 'GET',
-          mode: 'cors',
-          cache: 'no-cache',
-          headers: {
-            'Content-Type': 'application/json',
-          }
-        });
+        // Fetch simple sin headers personalizados para evitar CORS preflight
+        const response = await fetch(urlConTimestamp);
         
         if (!response.ok) {
           throw new Error(`Error ${response.status}: ${response.statusText}`);
