@@ -476,8 +476,8 @@
     // CONFIGURACIÓN Y ESTADO
     // ═══════════════════════════════════════════════════════════════
 
-    // ⚠️ CONFIGURACIÓN: Pega aquí la URL de tu Google Apps Script
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwO9-KmhNnUtzAWyHUiaRUogni7DVcmu4EybQxjQtwnHXikbSVSZwP4B8llDRFQ86O0BA/exec'; // Reemplazar con: https://script.google.com/macros/s/.../exec
+    // ⚠️ CONFIGURACIÓN: URL del Google Apps Script
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzHuN_KAhJoQgHEqoXO06UOqS9Spf-Fv4Q5Lsm9F7zcmaRn2SgT_XMXLHU5ViO3fq3sFQ/exec';
     
     let config = {
       scriptUrl: SCRIPT_URL || localStorage.getItem('scriptUrl') || ''
@@ -524,19 +524,33 @@
     // CARGA DE DATOS
     // ═══════════════════════════════════════════════════════════════
 
-    async function cargarDatos() {
+    async function cargarDatos(silencioso = false) {
       if (!config.scriptUrl) {
-        mostrarError('⚙️ Por favor configura primero la URL del Google Apps Script');
+        if (!silencioso) {
+          mostrarError('⚙️ Por favor configura primero la URL del Google Apps Script');
+        }
         return;
       }
 
-      mostrarLoading(true);
-      ocultarMensajes();
+      if (!silencioso) {
+        mostrarLoading(true);
+        ocultarMensajes();
+      }
 
       try {
         console.log('📊 Cargando datos desde:', config.scriptUrl);
 
-        const response = await fetch(config.scriptUrl);
+        // Agregar parámetros para evitar caché y mejorar la conexión
+        const urlConTimestamp = config.scriptUrl + (config.scriptUrl.includes('?') ? '&' : '?') + 't=' + Date.now();
+        
+        const response = await fetch(urlConTimestamp, {
+          method: 'GET',
+          mode: 'cors',
+          cache: 'no-cache',
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        });
         
         if (!response.ok) {
           throw new Error(`Error ${response.status}: ${response.statusText}`);
@@ -565,20 +579,29 @@
         document.getElementById('lastUpdate').textContent = 
           'Última actualización: ' + new Date().toLocaleTimeString('es-AR');
 
-        mostrarLoading(false);
+        if (!silencioso) {
+          mostrarLoading(false);
+        }
 
       } catch (error) {
-        console.error('❌ Error:', error);
-        mostrarError(
-          '❌ Error al cargar datos\n\n' +
-          error.message + '\n\n' +
-          '✅ Verifica:\n' +
-          '1. La URL del Script sea correcta\n' +
-          '2. Hayas ejecutado "Inicializar Sistema" en el Sheet\n' +
-          '3. El script esté implementado como Web App\n' +
-          '4. El acceso esté configurado como "Cualquier usuario"'
-        );
-        mostrarLoading(false);
+        console.error('❌ Error al cargar datos:', error.message);
+        
+        // Solo mostrar error visual si NO es una actualización automática
+        if (!silencioso) {
+          mostrarError(
+            '❌ Error al cargar datos\n\n' +
+            error.message + '\n\n' +
+            '✅ Verifica:\n' +
+            '1. La URL del Script sea correcta\n' +
+            '2. Hayas ejecutado "Inicializar Sistema" en el Sheet\n' +
+            '3. El script esté implementado como Web App\n' +
+            '4. El acceso esté configurado como "Cualquier usuario"'
+          );
+          mostrarLoading(false);
+        } else {
+          // En modo silencioso, solo log en consola
+          console.warn('⚠️ Auto-actualización falló, se reintentará en el próximo ciclo');
+        }
       }
     }
 
@@ -1222,12 +1245,13 @@
         document.getElementById('configCard').classList.remove('hidden');
       }
 
-      // Auto-refresh cada 30 segundos si hay datos
+      // Auto-refresh cada 2 minutos (120 segundos) para evitar límites de Google
       setInterval(() => {
         if (config.scriptUrl && !document.getElementById('statsSection').classList.contains('hidden')) {
-          cargarDatos();
+          console.log('🔄 Auto-actualización programada...');
+          cargarDatos(true); // true = modo silencioso (sin mostrar errores visuales)
         }
-      }, 30000);
+      }, 120000); // 2 minutos
     };
   </script>
 </body>
