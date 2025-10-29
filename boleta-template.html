@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes" />
+    <title>Simulador Votación UNLu 2025</title>
+  <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        overflow-x: auto;
+        overflow-y: scroll;
+        width: 100%;
+      }
+
+      body {
+        background: #d0d0d0;
+        font-family: Arial, sans-serif;
+        padding: 0;
+        margin: 0;
+        overflow-x: auto;
+        overflow-y: auto;
+        width: 100%;
+        min-height: 100vh;
+      }
+
+      .ballot-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: visible;
+        padding: 20px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .ballot-container {
+        background: white;
+        min-width: 1600px;
+        width: 1600px;
+        border: 3px solid black;
+        padding: 15px;
+        margin: 0 auto;
+      }
+
+      /* HEADER */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 3px solid black;
+        margin-bottom: 15px;
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo {
+        width: 50px;
+        height: 50px;
+        border: 2px solid black;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+      }
+
+      .logo img {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+      }
+
+      .header-center {
+      text-align: center;
+        flex: 1;
+      }
+
+      .header-center h1 {
+        font-size: 24px;
+      font-weight: bold;
+        margin: 0;
+      }
+
+      .header-center .subtitle {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 3px;
+      }
+
+      .header-right {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: right;
+      }
+
+      /* LISTAS SECTION */
+      .section-title {
+        background: #555;
+        color: white;
+        text-align: center;
+        padding: 8px;
+        font-size: 20px;
+      font-weight: bold;
+        margin: 15px 0 10px 0;
+      }
+
+      .listas-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 2px solid black;
+        margin-bottom: 20px;
+      }
+
+      .listas-table th {
+        background: #f0f0f0;
+        border: 2px solid black;
+        padding: 8px 5px;
+      font-size: 11px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .listas-table td {
+        border: 2px solid black;
+        padding: 8px 5px;
+        vertical-align: top;
+        font-size: 9px;
+      }
+
+      .lista-numero {
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        background: white;
+        position: relative;
+      }
+
+      .lista-numero-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .voto-completa {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 10px;
+        margin-top: 5px;
+      }
+
+      .checkbox {
+        width: 35px;
+        height: 35px;
+        border: 3px solid black;
+        background: white;
+        cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+        font-size: 24px;
+      font-weight: bold;
+        transition: all 0.2s;
+      }
+
+      .checkbox:hover {
+        background: #f0f0f0;
+      }
+
+      .checkbox.selected {
+        background: black;
+        color: white;
+      }
+
+      .titulares {
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-size: 10px;
+      }
+
+      .candidato {
+        margin: 2px 0;
+        font-size: 9px;
+        line-height: 1.3;
+      }
+
+      .checkbox-small {
+        width: 25px;
+        height: 25px;
+        border: 2px solid black;
+        background: white;
+        cursor: pointer;
+        display: block;
+        margin: 5px auto 0 auto;
+        font-size: 18px;
+        text-align: center;
+        line-height: 21px;
+      font-weight: bold;
+        transition: all 0.2s;
+      }
+
+      .checkbox-small:hover {
+        background: #f0f0f0;
+      }
+
+       .checkbox-small.selected {
+         background: black;
+         color: white;
+       }
+
+       /* Lista 110 - Fondo naranja */
+       tr[data-lista="110"] {
+         background-color: #ff9800;
+       }
+
+       tr[data-lista="110"] td {
+         background-color: #ff9800;
+       }
+
+       /* FÓRMULAS SECTION */
+       .formulas-table {
+         width: 100%;
+         border-collapse: collapse;
+         border: 2px solid black;
+         margin-bottom: 20px;
+       }
+
+       .formulas-table th {
+         background: #555;
+         color: white;
+         border: 2px solid black;
+         padding: 8px;
+         font-size: 11px;
+         font-weight: bold;
+         text-align: center;
+       }
+
+       .formulas-table td {
+         border: 2px solid black;
+         padding: 10px;
+         vertical-align: middle;
+       }
+
+       .formula-instancia {
+         background: #555;
+         color: white;
+         text-align: center;
+         font-size: 11px;
+         font-weight: bold;
+         line-height: 1.4;
+       }
+
+       .formula-candidatos {
+         background: white;
+         text-align: center;
+         font-size: 10px;
+       }
+
+       .formula-label {
+         font-size: 9px;
+         margin-top: 5px;
+         color: #666;
+       }
+
+       .formula-nombre {
+         font-size: 10px;
+         font-weight: bold;
+         margin-bottom: 3px;
+       }
+
+       .formula-checkbox {
+         width: 35px;
+         height: 35px;
+         border: 3px solid black;
+         background: white;
+         cursor: pointer;
+         display: block;
+         margin: 8px auto 0 auto;
+         font-size: 24px;
+         font-weight: bold;
+         text-align: center;
+         line-height: 29px;
+         transition: all 0.2s;
+       }
+
+       .formula-checkbox:hover {
+         background: #f0f0f0;
+       }
+
+       .formula-checkbox.selected {
+         background: black;
+         color: white;
+       }
+
+      /* Mobile styles - mantener diseño con scroll */
+      @media screen and (max-width: 1650px) {
+        .ballot-wrapper {
+          padding: 10px;
+        }
+      }
+
+      /* Print styles */
+      @media print {
+        html, body {
+          background: white;
+          padding: 0;
+          overflow: visible;
+          width: 100%;
+        }
+        
+        .ballot-wrapper {
+          overflow: visible;
+          padding: 0;
+          width: 100%;
+        }
+        
+        .ballot-container {
+          border: 2px solid black;
+          min-width: 100%;
+          width: 100%;
+        }
+        
+        .no-print {
+          display: none;
+        }
+      }
+
+  </style>
+</head>
+<body>
+    <div class="ballot-wrapper">
+      <div class="ballot-container">
+      <!-- HEADER -->
+      <div class="header">
+        <div class="header-left">
+          
+      </div>
+        <div class="header-center">
+          <h1>ELECCIONES UNLu AÑO 2025</h1>
+          <div class="subtitle">ESTUDIANTES</div>
+      </div>
+      </div>
+
+      <!-- LISTAS SECTION -->
+      <div class="section-title">LISTAS</div>
+
+      <table class="listas-table">
+      <thead>
+        <tr>
+            <th style="width: 8%">N° LISTA</th>
+            <th style="width: 13%">ASAMBLEA UNIVERSITARIA</th>
+            <th style="width: 13%">H. CONSEJO SUPERIOR</th>
+            <th style="width: 13%">C.D.D. CS. BÁSICAS</th>
+            <th style="width: 13%">C.D.D. CS. SOCIALES</th>
+            <th style="width: 13%">C.D.D. EDUCACIÓN</th>
+            <th style="width: 13%">C.D.D. TECNOLOGÍA</th>
+            <th style="width: 14%">CONSEJO ASESOR</th>
+        </tr>
+      </thead>
+      <tbody>
+          <!-- Lista 110 -->
+          <tr data-lista="110">
+            <td class="lista-numero">
+              <div class="lista-numero-inner">
+                <div style="font-size: 18px">110</div>
+                <div class="voto-completa">
+                  <div
+                    class="checkbox"
+                    data-type="completa"
+                    data-lista="110"
+                  ></div>
+                  <div style="margin-top: 3px; font-size: 9px">
+                    VOTO LISTA<br />COMPLETA
+                  </div>
+                </div>
+            </div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div class="candidato">4- APELLIDO, NOMBRE</div>
+              <div class="candidato">5- APELLIDO, NOMBRE</div>
+              <div class="candidato">6- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="110"
+                data-cargo="asamblea"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div class="candidato">4- APELLIDO, NOMBRE</div>
+              <div class="candidato">5- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="110"
+                data-cargo="consejo"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="110"
+                data-cargo="basicas"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="110"
+                data-cargo="sociales"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="110"
+                data-cargo="educacion"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="110"
+                data-cargo="tecnologia"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="110"
+                data-cargo="asesor"
+              ></div>
+          </td>
+        </tr>
+
+          <!-- Lista 117 -->
+          <tr data-lista="117">
+            <td class="lista-numero">
+              <div class="lista-numero-inner">
+                <div style="font-size: 18px">117</div>
+                <div class="voto-completa">
+                  <div
+                    class="checkbox"
+                    data-type="completa"
+                    data-lista="117"
+                  ></div>
+                  <div style="margin-top: 3px; font-size: 9px">
+                    VOTO LISTA<br />COMPLETA
+                  </div>
+                </div>
+            </div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div class="candidato">4- APELLIDO, NOMBRE</div>
+              <div class="candidato">5- APELLIDO, NOMBRE</div>
+              <div class="candidato">6- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="117"
+                data-cargo="asamblea"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div class="candidato">4- APELLIDO, NOMBRE</div>
+              <div class="candidato">5- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="117"
+                data-cargo="consejo"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="117"
+                data-cargo="basicas"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="117"
+                data-cargo="sociales"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div class="candidato">4- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="117"
+                data-cargo="educacion"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="117"
+                data-cargo="tecnologia"
+              ></div>
+          </td>
+          <td>
+              
+          </td>
+        </tr>
+
+          <!-- Lista 101 -->
+          <tr data-lista="101">
+            <td class="lista-numero">
+              <div class="lista-numero-inner">
+                <div style="font-size: 18px">101</div>
+                <div class="voto-completa">
+                  <div
+                    class="checkbox"
+                    data-type="completa"
+                    data-lista="101"
+                  ></div>
+                  <div style="margin-top: 3px; font-size: 9px">
+                    VOTO LISTA<br />COMPLETA
+            </div>
+            </div>
+              </div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div class="candidato">4- APELLIDO, NOMBRE</div>
+              <div class="candidato">5- APELLIDO, NOMBRE</div>
+              <div class="candidato">6- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="101"
+                data-cargo="asamblea"
+              >
+              
+          </div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div class="candidato">4- APELLIDO, NOMBRE</div>
+              <div class="candidato">5- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="101"
+                data-cargo="consejo"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="101"
+                data-cargo="basicas"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="101"
+                data-cargo="sociales"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="101"
+                data-cargo="educacion"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="101"
+                data-cargo="tecnologia"
+              ></div>
+          </td>
+            <td
+              style="
+                text-align: center;
+                vertical-align: middle;
+                font-size: 48px;
+                font-weight: bold;
+                color: #999;
+              "
+            ></td>
+        </tr>
+
+          <!-- Lista 111 -->
+          <tr data-lista="111">
+            <td class="lista-numero">
+              <div class="lista-numero-inner">
+                <div style="font-size: 18px">111</div>
+                <div class="voto-completa">
+                  <div
+                    class="checkbox"
+                    data-type="completa"
+                    data-lista="111"
+                  ></div>
+                  <div style="margin-top: 3px; font-size: 9px">
+                    VOTO LISTA<br />COMPLETA
+            </div>
+            </div>
+          </div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div class="candidato">4- APELLIDO, NOMBRE</div>
+              <div class="candidato">5- APELLIDO, NOMBRE</div>
+              <div class="candidato">6- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="111"
+                data-cargo="asamblea"
+              >
+                
+            </div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div class="candidato">4- APELLIDO, NOMBRE</div>
+              <div class="candidato">5- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="111"
+                data-cargo="consejo"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="111"
+                data-cargo="basicas"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="111"
+                data-cargo="sociales"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="111"
+                data-cargo="educacion"
+              ></div>
+          </td>
+          <td>
+              <div class="titulares">TITULARES:</div>
+              <div class="candidato">1- APELLIDO, NOMBRE</div>
+              <div class="candidato">2- APELLIDO, NOMBRE</div>
+              <div class="candidato">3- APELLIDO, NOMBRE</div>
+              <div
+                class="checkbox-small"
+                data-type="individual"
+                data-lista="111"
+                data-cargo="tecnologia"
+              ></div>
+          </td>
+            <td
+              style="
+                text-align: center;
+                vertical-align: middle;
+                font-size: 48px;
+                font-weight: bold;
+                color: #999;
+              "
+            ></td>
+        </tr>
+      </tbody>
+    </table>
+    
+      <!-- FÓRMULAS SECTION -->
+      <div class="section-title">FÓRMULAS</div>
+
+      <table class="formulas-table">
+        <thead>
+          <tr>
+            <th style="width: 35%">INSTANCIA</th>
+            <th style="width: 32.5%">CANDIDATOS/AS</th>
+            <th style="width: 32.5%">CANDIDATOS/AS</th>
+          </tr>
+        </thead>
+        <tbody>
+        <!-- Rector/a Vicerrector/a -->
+          <tr>
+            <td class="formula-instancia">
+              RECTOR/A<br />VICERRECTOR/A
+            </td>
+            <td class="formula-candidatos">
+              <div class="formula-label">Rector</div>
+              <div class="formula-nombre">APELLIDO, NOMBRE</div>
+              <div class="formula-label">Vicerrector</div>
+              <div class="formula-nombre">APELLIDO, NOMBRE</div>
+              <div class="formula-checkbox" data-formula="rector"></div>
+            </td>
+            <td class="formula-candidatos">
+              <div class="formula-label">Rector</div>
+              <div class="formula-nombre">APELLIDO, NOMBRE</div>
+              <div class="formula-label">Vicerrector</div>
+              <div class="formula-nombre">APELLIDO, NOMBRE</div>
+              <div class="formula-checkbox" data-formula="rector2"></div>
+            </td>
+          </tr>
+
+        <!-- Director/a Decan/o/a Ciencias Básicas -->
+          <tr>
+            <td class="formula-instancia">
+              DIRECTOR/A DECAN/O/A<br />VICEDIRECTOR/A DECAN/O/A<br /><br />CIENCIAS BÁSICAS
+            </td>
+            <td class="formula-candidatos">
+              <div class="formula-label">Director Decano</div>
+              <div class="formula-nombre">APELLIDO, NOMBRE</div>
+              <div class="formula-label">Vicedirectora Decana</div>
+              <div class="formula-nombre">APELLIDO, NOMBRE</div>
+              <div class="formula-checkbox" data-formula="basicas1"></div>
+            </td>
+            <td class="formula-candidatos">
+              <div class="formula-label">Director Decano</div>
+              <div class="formula-nombre">APELLIDO, NOMBRE</div>
+              <div class="formula-label">Vicedirector Decano</div>
+              <div class="formula-nombre">APELLIDO, NOMBRE</div>
+              <div class="formula-checkbox" data-formula="basicas2"></div>
+            </td>
+          </tr>
+
+        <!-- Director/a Decan/o/a Ciencias Sociales -->
+          <tr>
+            <td class="formula-instancia">
+              DIRECTOR/A DECAN/O/A<br />VICEDIRECTOR/A DECAN/O/A<br /><br />CIENCIAS SOCIALES
+            </td>
+            <td class="formula-candidatos">
+              <div class="formula-label">Director Decano</div>
+              <div class="formula-nombre">APELLIDO, NOMBRE</div>
+              <div class="formula-label">Vicedirectora Decana</div>
+              <div class="formula-nombre">APELLIDO, NOMBRE</div>
+              <div class="formula-checkbox" data-formula="sociales"></div>
+            </td>
+            <td></td>
+          </tr>
+
+        <!-- Director/a Decan/o/a Educación -->
+          <tr>
+            <td class="formula-instancia">
+              DIRECTOR/A DECAN/O/A<br />VICEDIRECTOR/A DECAN/O/A<br /><br />EDUCACIÓN
+            </td>
+            <td class="formula-candidatos">
+              <div class="formula-label">Director Decano</div>
+              <div class="formula-nombre">APELLIDO, NOMBRE</div>
+              <div class="formula-label">Vicedirectora Decana</div>
+              <div class="formula-nombre">APELLIDO, NOMBRE</div>
+              <div class="formula-checkbox" data-formula="educacion"></div>
+            </td>
+            <td></td>
+          </tr>
+
+        <!-- Director/a Decan/o/a Tecnología -->
+          <tr>
+            <td class="formula-instancia">
+              DIRECTOR/A DECAN/O/A<br />VICEDIRECTOR/A DECAN/O/A<br /><br />TECNOLOGÍA
+            </td>
+            <td class="formula-candidatos">
+              <div class="formula-label">Directora Decana</div>
+              <div class="formula-nombre">APELLIDO, NOMBRE</div>
+              <div class="formula-label">Vicedirector Decano</div>
+              <div class="formula-nombre">APELLIDO, NOMBRE</div>
+              <div class="formula-checkbox" data-formula="tecnologia"></div>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+          </div>
+        </div>
+
+    <script>
+      // Variables globales
+      let selecciones = {
+        listas: {},
+        formulas: {},
+      };
+
+      // Inicializar checkboxes
+      document.addEventListener("DOMContentLoaded", function () {
+        // Checkboxes de listas
+        document
+          .querySelectorAll(".checkbox, .checkbox-small")
+          .forEach((checkbox) => {
+            checkbox.addEventListener("click", function () {
+              const tipo = this.getAttribute("data-type");
+              const lista = this.getAttribute("data-lista");
+              const cargo = this.getAttribute("data-cargo");
+
+              if (tipo === "completa") {
+                toggleListaCompleta(lista, this);
+              } else if (tipo === "individual") {
+                toggleCargoIndividual(lista, cargo, this);
+              }
+            });
+          });
+
+        // Checkboxes de fórmulas
+        document.querySelectorAll(".formula-checkbox").forEach((checkbox) => {
+          checkbox.addEventListener("click", function () {
+            const formula = this.getAttribute("data-formula");
+            toggleFormula(formula, this);
+          });
+        });
+      });
+
+      function toggleListaCompleta(lista, checkbox) {
+        const isSelected = checkbox.classList.contains("selected");
+        const fila = checkbox.closest("tr");
+
+        if (isSelected) {
+          // Deseleccionar
+          checkbox.classList.remove("selected");
+          checkbox.textContent = "";
+          delete selecciones.listas[lista];
+
+          // Deseleccionar todos los checkboxes individuales
+          fila.querySelectorAll(".checkbox-small").forEach((cb) => {
+            cb.classList.remove("selected");
+            cb.textContent = "";
+          });
+        } else {
+          // Verificar si ya hay otra lista completa seleccionada
+          const otraListaCompleta = Object.entries(selecciones.listas).find(
+            ([key, value]) => key !== lista && value === "COMPLETA"
+          );
+
+          if (otraListaCompleta) {
+            alert(`Ya tiene seleccionada la lista ${otraListaCompleta[0]} completa. Solo puede votar una lista completa. Primero deseleccione la otra lista.`);
+            return;
+          }
+
+          // Verificar si hay votos individuales en otras listas
+          const hayVotosIndividuales = Object.entries(selecciones.listas).some(
+            ([key, value]) => key !== lista && Array.isArray(value) && value.length > 0
+          );
+
+          if (hayVotosIndividuales) {
+            alert("Ya tiene votos individuales en otras listas. No puede votar lista completa si ya votó candidatos individuales.");
+            return;
+          }
+
+          // Seleccionar
+          checkbox.classList.add("selected");
+          checkbox.textContent = "✓";
+          selecciones.listas[lista] = "COMPLETA";
+
+          // Marcar todos los checkboxes individuales visualmente
+          fila.querySelectorAll(".checkbox-small").forEach((cb) => {
+            cb.classList.add("selected");
+            cb.textContent = "✓";
+          });
+        }
+      }
+
+      function toggleCargoIndividual(lista, cargo, checkbox) {
+        const isSelected = checkbox.classList.contains("selected");
+        const fila = checkbox.closest("tr");
+        const checkboxCompleta = fila.querySelector(
+          '.checkbox[data-type="completa"]'
+        );
+
+        // Si la lista completa está seleccionada, no permitir cambios individuales
+        if (checkboxCompleta.classList.contains("selected") && !isSelected) {
+          return;
+        }
+
+        if (isSelected) {
+          // Deseleccionar
+          checkbox.classList.remove("selected");
+          checkbox.textContent = "";
+
+          if (!selecciones.listas[lista]) {
+            selecciones.listas[lista] = [];
+          }
+          const index = selecciones.listas[lista].indexOf(cargo);
+          if (index > -1) {
+            selecciones.listas[lista].splice(index, 1);
+          }
+          if (selecciones.listas[lista].length === 0) {
+            delete selecciones.listas[lista];
+          }
+        } else {
+          // Verificar si ya hay una lista completa seleccionada
+          const listaCompletaSeleccionada = Object.entries(selecciones.listas).find(
+            ([key, value]) => value === "COMPLETA"
+          );
+
+          if (listaCompletaSeleccionada) {
+            alert(`Ya tiene seleccionada la lista ${listaCompletaSeleccionada[0]} completa. No puede votar candidatos individuales.`);
+            return;
+          }
+
+          // Verificar si este cargo ya fue votado en otra lista
+          const cargoYaVotado = Object.entries(selecciones.listas).find(
+            ([key, value]) => key !== lista && Array.isArray(value) && value.includes(cargo)
+          );
+
+          if (cargoYaVotado) {
+            alert(`Ya votó este cargo en la lista ${cargoYaVotado[0]}. No puede votar el mismo cargo en dos listas diferentes.`);
+            return;
+          }
+
+          // Seleccionar
+          checkbox.classList.add("selected");
+          checkbox.textContent = "✓";
+
+          if (!selecciones.listas[lista]) {
+            selecciones.listas[lista] = [];
+          }
+          if (!selecciones.listas[lista].includes(cargo)) {
+            selecciones.listas[lista].push(cargo);
+          }
+        }
+      }
+
+      function toggleFormula(formula, checkbox) {
+        const isSelected = checkbox.classList.contains("selected");
+
+        if (isSelected) {
+          // Deseleccionar
+          checkbox.classList.remove("selected");
+          checkbox.textContent = "";
+          delete selecciones.formulas[formula];
+        } else {
+          // Verificar si ya hay una fórmula del mismo tipo seleccionada
+          const tipoFormula = formula.replace(/\d+$/, ''); // Quitar números al final (ej: "rector" de "rector2")
+          const formulaDelMismoTipo = Object.keys(selecciones.formulas).find(
+            (key) => key !== formula && key.startsWith(tipoFormula)
+          );
+
+          if (formulaDelMismoTipo) {
+            alert(`Ya tiene seleccionada otra fórmula para este cargo. Solo puede votar una fórmula por cargo.`);
+            return;
+          }
+
+          // Seleccionar
+          checkbox.classList.add("selected");
+          checkbox.textContent = "✓";
+          selecciones.formulas[formula] = true;
+        }
+      }
+
+  </script>
+</body>
+</html>
