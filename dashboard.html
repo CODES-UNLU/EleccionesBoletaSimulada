@@ -340,6 +340,12 @@
     <!-- Estadísticas -->
     <div id="statsSection" class="hidden">
       <div class="stats-grid">
+        <div class="stat-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+          <div class="stat-icon">🗳️</div>
+          <div class="stat-label" style="color: rgba(255,255,255,0.9);">Personas que Votaron</div>
+          <div class="stat-value" id="personasVotaron" style="color: white;">0</div>
+        </div>
+
         <div class="stat-card">
           <div class="stat-icon">✅</div>
           <div class="stat-label">Total de Votos (Tildes)</div>
@@ -614,6 +620,7 @@
       // Contadores
       const stats = {
         totalVotos: filas.length,
+        personasUnicas: new Set(), // Para contar personas únicas por timestamp
         porSede: {},
         porTipoVoto: {},
         porListaCompleta: {},
@@ -630,6 +637,11 @@
       // Procesar cada selección
       filas.forEach(fila => {
         const [timestamp, sede, tipoVoto, listaCompleta, cargo, candidato, agrupacion] = fila;
+
+        // Agregar timestamp único (cada timestamp = 1 persona que votó)
+        if (timestamp) {
+          stats.personasUnicas.add(timestamp);
+        }
 
         // Contar por sede
         stats.porSede[sede] = (stats.porSede[sede] || 0) + 1;
@@ -700,6 +712,10 @@
       // ============================================================
       // ESTADÍSTICAS PRINCIPALES: CONTEO POR TIPO DE VOTO
       // ============================================================
+      
+      // Personas que votaron (timestamps únicos)
+      const personasQueVotaron = stats.personasUnicas.size;
+      document.getElementById('personasVotaron').textContent = personasQueVotaron.toLocaleString();
       
       // Total de votos (tildes) emitidos
       document.getElementById('totalVotos').textContent = stats.totalVotos.toLocaleString();
