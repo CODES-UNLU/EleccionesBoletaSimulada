@@ -375,20 +375,35 @@ function doPost(e) {
     
     // Si envió un array de votos
     if (data.votos && Array.isArray(data.votos)) {
-      data.votos.forEach(voto => {
+      // Si el array está vacío, es un voto en blanco
+      if (data.votos.length === 0) {
         sheet.appendRow([
           timestamp,
           data.sede,
-          voto.tipoVoto || 'Individual',
-          voto.listaCompleta || '-',
-          voto.cargo || '-',
-          voto.candidato || '-',
-          voto.agrupacion || '-'
+          'Voto en Blanco',
+          '-',
+          '-',
+          '-',
+          '-'
         ]);
-        votosGuardados++;
-      });
-      
-      Logger.log('✅ ' + votosGuardados + ' votos guardados desde ' + data.sede);
+        Logger.log('✅ Voto en blanco registrado desde ' + data.sede);
+      } else {
+        // Votos normales
+        data.votos.forEach(voto => {
+          sheet.appendRow([
+            timestamp,
+            data.sede,
+            voto.tipoVoto || 'Individual',
+            voto.listaCompleta || '-',
+            voto.cargo || '-',
+            voto.candidato || '-',
+            voto.agrupacion || '-'
+          ]);
+          votosGuardados++;
+        });
+        
+        Logger.log('✅ ' + votosGuardados + ' votos guardados desde ' + data.sede);
+      }
     } 
     // Si envió un solo voto (compatibilidad)
     else {

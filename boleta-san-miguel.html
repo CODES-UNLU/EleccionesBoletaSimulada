@@ -1105,5 +1105,54 @@
       }
 
   </script>
+
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  <!-- BOTÓN DE CONFIRMACIÓN DE VOTO -->
+  <!-- ════════════════════════════════════════════════════════════════ -->
+  
+  <div style="text-align: center; margin: 40px 20px; padding: 30px; background: #f5f5f5; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+    <h2 style="color: #ff9800; margin-bottom: 10px; font-size: 28px;">
+      📋 ¿Terminaste de votar?
+    </h2>
+    <p style="margin-bottom: 25px; color: #666; font-size: 16px; line-height: 1.6;">
+      Revisa tus selecciones antes de confirmar.<br>
+      <strong>Una vez enviado, no podrás modificar tu voto.</strong>
+    </p>
+    
+    <button 
+      onclick="enviarVotosAlSheet()" 
+      id="btn-confirmar-voto"
+      style="
+        background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+        color: white;
+        border: none;
+        padding: 18px 50px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+        transition: all 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      "
+      onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(255, 152, 0, 0.5)'"
+      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(255, 152, 0, 0.4)'"
+    >
+      ✅ Son Correctos
+    </button>
+    
+    <p style="margin-top: 15px; color: #999; font-size: 14px;">
+      🔒 Tu voto será enviado de forma segura
+    </p>
+  </div>
+
+  <!-- Sistema de Votación -->
+  <script src="sistema-votacion.js"></script>
+  <script>
+    // Inicializar sistema de votación para Centro Regional SAN MIGUEL
+    inicializarSistemaVotacion('Centro Regional SAN MIGUEL');
+  </script>
+
 </body>
 </html>
